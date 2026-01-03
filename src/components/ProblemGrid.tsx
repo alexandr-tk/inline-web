@@ -24,7 +24,7 @@ const ProblemGrid = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-            Writing is hard. <span className="gradient-text">We get it.</span>
+            Writing is hard. <span className="text-primary">We get it.</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Every student faces these challenges. Inline is here to help.
@@ -35,10 +35,10 @@ const ProblemGrid = () => {
           {problems.map((problem, index) => (
             <div
               key={problem.title}
-              className="group p-8 rounded-2xl bg-card border border-border card-shadow hover:card-shadow-hover transition-all duration-300 hover:-translate-y-1"
+              className="group p-8 rounded-2xl bg-card border border-border card-shadow hover-lift"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110">
                 <problem.icon className="w-6 h-6 text-primary-foreground" />
               </div>
               <h3 className="text-xl font-semibold mb-3">{problem.title}</h3>

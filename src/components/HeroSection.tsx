@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { FileText, MessageCircle } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 
 const HeroSection = () => {
   const scrollToDemo = () => {
@@ -14,7 +14,7 @@ const HeroSection = () => {
           <div className="space-y-8 animate-fade-in">
             <h1 className="text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-balance">
               Your Writing Tutor.{" "}
-              <span className="gradient-text">Available 24/7.</span>
+              <span className="text-primary">Available 24/7.</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed max-w-lg">
               Don't let a deadline panic you into plagiarism. Inline helps you
@@ -22,7 +22,6 @@ const HeroSection = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
-                variant="gradient"
                 size="xl"
                 onClick={scrollToDemo}
               >
@@ -36,7 +35,7 @@ const HeroSection = () => {
 
           {/* Right: Visual */}
           <div className="relative animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            <div className="relative bg-card rounded-2xl card-shadow p-6 border border-border">
+            <div className="relative bg-card rounded-2xl card-shadow p-6 border border-border hover-lift">
               {/* Document mockup */}
               <div className="space-y-4">
                 <div className="flex items-center gap-3 pb-4 border-b border-border">
@@ -58,7 +57,7 @@ const HeroSection = () => {
               {/* Floating feedback card */}
               <div className="absolute -right-4 top-1/2 -translate-y-1/2 translate-x-1/2 bg-card rounded-xl card-shadow-hover p-4 border border-primary/20 max-w-[220px] animate-slide-in-right" style={{ animationDelay: "0.5s" }}>
                 <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-lg gradient-bg flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center flex-shrink-0">
                     <MessageCircle className="w-4 h-4 text-primary-foreground" />
                   </div>
                   <div className="space-y-1">
@@ -72,7 +71,7 @@ const HeroSection = () => {
             </div>
 
             {/* Background decoration */}
-            <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] gradient-bg-subtle rounded-full blur-3xl opacity-60" />
+            <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-accent-light rounded-full blur-3xl opacity-40" />
           </div>
         </div>
       </div>

@@ -36,52 +36,59 @@ const segments: FeedbackSegment[] = [
 const getSegmentStyles = (type: FeedbackSegment["type"], isActive: boolean) => {
   const base = "cursor-pointer transition-all duration-200 rounded px-1 -mx-1";
   
+  // Always show background color for visibility
   switch (type) {
     case "socratic":
       return cn(
         base,
+        "bg-feedback-blue-bg border-l-2",
         isActive
-          ? "bg-feedback-blue-bg border-l-2 border-feedback-blue pl-2"
-          : "hover:bg-feedback-blue-bg/50 border-l-2 border-transparent hover:border-feedback-blue/50 hover:pl-2"
+          ? "border-primary pl-2 shadow-sm"
+          : "border-feedback-blue/50 hover:border-primary hover:pl-2"
       );
     case "logic":
       return cn(
         base,
+        "bg-feedback-amber-bg border-l-2",
         isActive
-          ? "bg-feedback-amber-bg border-l-2 border-feedback-amber pl-2"
-          : "hover:bg-feedback-amber-bg/50 border-l-2 border-transparent hover:border-feedback-amber/50 hover:pl-2"
+          ? "border-primary pl-2 shadow-sm"
+          : "border-feedback-amber/50 hover:border-primary hover:pl-2"
       );
     case "praise":
       return cn(
         base,
+        "bg-feedback-teal-bg border-l-2",
         isActive
-          ? "bg-feedback-teal-bg border-l-2 border-feedback-teal pl-2"
-          : "hover:bg-feedback-teal-bg/50 border-l-2 border-transparent hover:border-feedback-teal/50 hover:pl-2"
+          ? "border-primary pl-2 shadow-sm"
+          : "border-feedback-teal/50 hover:border-primary hover:pl-2"
       );
   }
 };
 
 const getFeedbackCardStyles = (type: FeedbackSegment["type"], isActive: boolean) => {
-  const base = "p-4 rounded-xl border-l-4 cursor-pointer transition-all duration-200";
+  const base = "p-4 rounded-xl border-2 cursor-pointer transition-all duration-200";
   
   switch (type) {
     case "socratic":
       return cn(
         base,
-        "border-l-feedback-blue",
-        isActive ? "bg-feedback-blue-bg shadow-md" : "bg-card hover:bg-feedback-blue-bg/50"
+        isActive 
+          ? "border-primary bg-feedback-blue-bg shadow-md" 
+          : "border-feedback-blue bg-card hover:border-primary"
       );
     case "logic":
       return cn(
         base,
-        "border-l-feedback-amber",
-        isActive ? "bg-feedback-amber-bg shadow-md" : "bg-card hover:bg-feedback-amber-bg/50"
+        isActive 
+          ? "border-primary bg-feedback-amber-bg shadow-md" 
+          : "border-feedback-amber bg-card hover:border-primary"
       );
     case "praise":
       return cn(
         base,
-        "border-l-feedback-teal",
-        isActive ? "bg-feedback-teal-bg shadow-md" : "bg-card hover:bg-feedback-teal-bg/50"
+        isActive 
+          ? "border-primary bg-feedback-teal-bg shadow-md" 
+          : "border-feedback-teal bg-card hover:border-primary"
       );
   }
 };
@@ -187,19 +194,19 @@ const InteractiveDemo = () => {
     <section id="demo" className="py-24 px-6">
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6 hover-scale-sm cursor-default">
             <MessageCircle className="w-4 h-4" />
             Interactive Demo
           </div>
           <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-            See Inline in <span className="gradient-text">Action</span>
+            See Inline in <span className="text-primary">Action</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Click on highlighted passages to see the corresponding feedback.
           </p>
         </div>
 
-        <div className="bg-card rounded-2xl border border-border card-shadow overflow-hidden">
+        <div className="bg-card rounded-2xl border border-border card-shadow overflow-hidden hover-lift">
           {/* Editor Header */}
           <div className="flex items-center gap-3 px-6 py-4 border-b border-border bg-muted/30">
             <div className="flex items-center gap-2">
