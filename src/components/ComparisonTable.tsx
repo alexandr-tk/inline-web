@@ -1,4 +1,5 @@
 import { Check, X, Shield, Brain, MessageCircle } from "lucide-react";
+import Logo from "@/components/Logo";
 
 const comparisons = [
   {
@@ -38,8 +39,8 @@ const ComparisonTable = () => {
           {/* Header */}
           <div className="grid grid-cols-3 bg-muted/50 border-b border-border">
             <div className="p-6 font-medium text-muted-foreground" />
-            <div className="p-6 text-center">
-              <span className="text-lg font-bold text-primary">Inline</span>
+            <div className="p-6 flex items-center justify-center">
+              <Logo className="pointer-events-none" />
             </div>
             <div className="p-6 text-center">
               <span className="text-lg font-semibold text-muted-foreground">Generative AI</span>
