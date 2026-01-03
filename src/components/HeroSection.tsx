@@ -38,7 +38,7 @@ const HeroSection = () => {
 
           {/* Right: Visual with Parallax Effect */}
           <div 
-            className="relative animate-fade-in hidden lg:block" 
+            className="relative animate-fade-in" 
             style={{ animationDelay: "0.2s" }}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
@@ -67,10 +67,10 @@ const HeroSection = () => {
                 </div>
               </div>
 
-              {/* Floating feedback card - repositioned to stay in viewport */}
+              {/* Floating feedback card - opposite rotation */}
               <div 
-                className={`absolute right-4 top-1/2 -translate-y-1/2 translate-x-[60%] bg-card rounded-xl card-shadow-hover p-4 border border-primary/20 max-w-[200px] transition-all duration-700 ease-out ${
-                  isHovered ? 'rotate-3' : 'rotate-1'
+                className={`absolute -right-4 top-1/2 -translate-y-1/2 translate-x-1/2 bg-card rounded-xl card-shadow-hover p-4 border border-primary/20 max-w-[220px] transition-all duration-700 ease-out ${
+                  isHovered ? 'rotate-6' : 'rotate-2'
                 }`}
               >
                 <div className="flex items-start gap-3">
@@ -89,26 +89,6 @@ const HeroSection = () => {
 
             {/* Background decoration */}
             <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-accent-light rounded-full blur-3xl opacity-40" />
-          </div>
-
-          {/* Mobile: Simplified mockup */}
-          <div className="lg:hidden relative animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            <div className="bg-card rounded-2xl card-shadow p-6 border border-border">
-              <div className="space-y-4">
-                <div className="flex items-center gap-3 pb-4 border-b border-border">
-                  <div className="w-3 h-3 rounded-full bg-destructive/60" />
-                  <div className="w-3 h-3 rounded-full bg-feedback-amber/60" />
-                  <div className="w-3 h-3 rounded-full bg-feedback-teal/60" />
-                  <span className="text-sm text-muted-foreground ml-2">essay_draft.docx</span>
-                </div>
-                <div className="space-y-3">
-                  <div className="h-3 bg-muted rounded w-full" />
-                  <div className="h-3 bg-muted rounded w-4/5" />
-                  <div className="h-3 bg-primary/20 rounded w-full border-l-2 border-primary" />
-                  <div className="h-3 bg-muted rounded w-3/4" />
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>

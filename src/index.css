@@ -111,9 +111,9 @@
     box-shadow: var(--shadow-card-hover);
   }
 
-  /* Dot pattern background - clearly visible texture */
+  /* Dot pattern background - more visible */
   .dot-pattern {
-    background-image: radial-gradient(circle, hsl(var(--foreground) / 0.22) 1px, transparent 1px);
+    background-image: radial-gradient(circle, hsl(var(--foreground) / 0.12) 1px, transparent 1px);
     background-size: 24px 24px;
   }
 
@@ -138,15 +138,15 @@
     z-index: 0;
   }
 
-  /* Pulse animation for steps - 9s total cycle (3s per step, 2s hold + 1s transition) */
+  /* Pulse animation for steps */
   @keyframes pulse-step {
-    0%, 22% { opacity: 1; box-shadow: 0 0 0 4px hsl(var(--primary) / 0.3); }
-    33%, 100% { opacity: 0.7; box-shadow: 0 0 0 0 hsl(var(--primary) / 0); }
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
   }
 
-  .step-pulse-1 { animation: pulse-step 9s ease-in-out infinite; animation-delay: 0s; }
-  .step-pulse-2 { animation: pulse-step 9s ease-in-out infinite; animation-delay: 3s; }
-  .step-pulse-3 { animation: pulse-step 9s ease-in-out infinite; animation-delay: 6s; }
+  .step-pulse-1 { animation: pulse-step 3s ease-in-out infinite; animation-delay: 0s; }
+  .step-pulse-2 { animation: pulse-step 3s ease-in-out infinite; animation-delay: 1s; }
+  .step-pulse-3 { animation: pulse-step 3s ease-in-out infinite; animation-delay: 2s; }
 
   /* Watermark icon positioning */
   .watermark-icon {
