@@ -33,85 +33,66 @@ const segments: FeedbackSegment[] = [
   },
 ];
 
-const getSegmentStyles = (type: FeedbackSegment["type"], isActive: boolean) => {
-  const base = "cursor-pointer transition-all duration-200 rounded px-1 -mx-1";
+const getHighlightStyles = (type: FeedbackSegment["type"], isActive: boolean) => {
+  const base = "cursor-pointer transition-all duration-200 rounded px-0.5 -mx-0.5";
   
-  // Always show background color for visibility
   switch (type) {
     case "socratic":
-      return cn(
-        base,
-        "bg-feedback-blue-bg border-l-2",
-        isActive
-          ? "border-primary pl-2 shadow-sm"
-          : "border-feedback-blue/50 hover:border-primary hover:pl-2"
-      );
+      return cn(base, "bg-feedback-blue-bg", isActive && "ring-1 ring-feedback-blue");
     case "logic":
-      return cn(
-        base,
-        "bg-feedback-amber-bg border-l-2",
-        isActive
-          ? "border-primary pl-2 shadow-sm"
-          : "border-feedback-amber/50 hover:border-primary hover:pl-2"
-      );
+      return cn(base, "bg-feedback-amber-bg", isActive && "ring-1 ring-feedback-amber");
     case "praise":
-      return cn(
-        base,
-        "bg-feedback-teal-bg border-l-2",
-        isActive
-          ? "border-primary pl-2 shadow-sm"
-          : "border-feedback-teal/50 hover:border-primary hover:pl-2"
-      );
+      return cn(base, "bg-feedback-teal-bg", isActive && "ring-1 ring-feedback-teal");
   }
 };
 
 const getFeedbackCardStyles = (type: FeedbackSegment["type"], isActive: boolean) => {
-  const base = "p-4 rounded-xl border-2 cursor-pointer transition-all duration-200";
+  const base = "p-4 rounded-xl bg-card cursor-pointer transition-all duration-200";
   
+  if (isActive) {
+    switch (type) {
+      case "socratic":
+        return cn(base, "ring-1 ring-feedback-blue card-shadow-hover");
+      case "logic":
+        return cn(base, "ring-1 ring-feedback-amber card-shadow-hover");
+      case "praise":
+        return cn(base, "ring-1 ring-feedback-teal card-shadow-hover");
+    }
+  }
+  
+  return cn(base, "card-shadow hover:card-shadow-hover");
+};
+
+const getBadgeStyles = (type: FeedbackSegment["type"]) => {
   switch (type) {
     case "socratic":
-      return cn(
-        base,
-        isActive 
-          ? "border-primary bg-feedback-blue-bg shadow-md" 
-          : "border-feedback-blue bg-card hover:border-primary"
-      );
+      return "bg-feedback-blue-bg text-feedback-blue";
     case "logic":
-      return cn(
-        base,
-        isActive 
-          ? "border-primary bg-feedback-amber-bg shadow-md" 
-          : "border-feedback-amber bg-card hover:border-primary"
-      );
+      return "bg-feedback-amber-bg text-feedback-amber";
     case "praise":
-      return cn(
-        base,
-        isActive 
-          ? "border-primary bg-feedback-teal-bg shadow-md" 
-          : "border-feedback-teal bg-card hover:border-primary"
-      );
+      return "bg-feedback-teal-bg text-feedback-teal";
   }
 };
 
 const getFeedbackIcon = (type: FeedbackSegment["type"]) => {
   switch (type) {
     case "socratic":
-      return <MessageCircle className="w-4 h-4 text-feedback-blue" />;
+      return <MessageCircle className="w-3 h-3" />;
     case "logic":
-      return <AlertTriangle className="w-4 h-4 text-feedback-amber" />;
+      return <AlertTriangle className="w-3 h-3" />;
     case "praise":
-      return <Award className="w-4 h-4 text-feedback-teal" />;
+      return <Award className="w-3 h-3" />;
   }
 };
 
 const getFeedbackLabel = (type: FeedbackSegment["type"]) => {
   switch (type) {
     case "socratic":
-      return "Socratic Question";
+      return "SOCRATIC";
     case "logic":
-      return "Logic Gap";
+      return "LOGIC GAP";
     case "praise":
-      return "Praise";
+      return "PRAISE";
   }
 };
 
@@ -144,7 +125,7 @@ const InteractiveDemo = () => {
           usually shape our perception of the image simultaneously.{" "}
           <span
             ref={(el) => (textRefs.current[segments[0].id] = el)}
-            className={getSegmentStyles(segments[0].type, activeSegment === segments[0].id)}
+            className={getHighlightStyles(segments[0].type, activeSegment === segments[0].id)}
             onClick={() => handleSegmentClick(segments[0].id)}
           >
             {segments[0].text}
@@ -162,7 +143,7 @@ const InteractiveDemo = () => {
           taken in Russia.{" "}
           <span
             ref={(el) => (textRefs.current[segments[1].id] = el)}
-            className={getSegmentStyles(segments[1].type, activeSegment === segments[1].id)}
+            className={getHighlightStyles(segments[1].type, activeSegment === segments[1].id)}
             onClick={() => handleSegmentClick(segments[1].id)}
           >
             {segments[1].text}
@@ -180,7 +161,7 @@ const InteractiveDemo = () => {
           similar to Europe.{" "}
           <span
             ref={(el) => (textRefs.current[segments[2].id] = el)}
-            className={getSegmentStyles(segments[2].type, activeSegment === segments[2].id)}
+            className={getHighlightStyles(segments[2].type, activeSegment === segments[2].id)}
             onClick={() => handleSegmentClick(segments[2].id)}
           >
             {segments[2].text}
@@ -194,11 +175,11 @@ const InteractiveDemo = () => {
     <section id="demo" className="py-24 px-6">
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6 hover-scale-sm cursor-default">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
             <MessageCircle className="w-4 h-4" />
             Interactive Demo
           </div>
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+          <h2 className="text-3xl lg:text-4xl font-extrabold mb-4" style={{ color: '#1a1a1a' }}>
             See Inline in <span className="text-primary">Action</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -206,7 +187,7 @@ const InteractiveDemo = () => {
           </p>
         </div>
 
-        <div className="bg-card rounded-2xl border border-border card-shadow overflow-hidden hover-lift">
+        <div className="bg-card rounded-2xl border border-border card-shadow overflow-hidden">
           {/* Editor Header */}
           <div className="flex items-center gap-3 px-6 py-4 border-b border-border bg-muted/30">
             <div className="flex items-center gap-2">
@@ -238,11 +219,14 @@ const InteractiveDemo = () => {
                     className={getFeedbackCardStyles(segment.type, activeSegment === segment.id)}
                     onClick={() => handleSegmentClick(segment.id)}
                   >
-                    <div className="flex items-center gap-2 mb-2">
-                      {getFeedbackIcon(segment.type)}
-                      <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                    <div className="flex items-center justify-between mb-3">
+                      <div className={cn(
+                        "inline-flex items-center gap-1.5 px-2 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider",
+                        getBadgeStyles(segment.type)
+                      )}>
+                        {getFeedbackIcon(segment.type)}
                         {getFeedbackLabel(segment.type)}
-                      </span>
+                      </div>
                     </div>
                     <p className="text-sm text-foreground leading-relaxed">
                       {segment.feedback}

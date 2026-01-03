@@ -20,10 +20,10 @@ const steps = [
 
 const HowItWorks = () => {
   return (
-    <section id="methodology" className="py-12 px-6">
+    <section id="methodology" className="py-16 px-6 dot-pattern">
       <div className="container mx-auto max-w-5xl">
         <div className="text-center mb-8">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-3">
+          <h2 className="text-3xl lg:text-4xl font-extrabold mb-3" style={{ color: '#1a1a1a' }}>
             How it <span className="text-primary">Works</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -33,10 +33,10 @@ const HowItWorks = () => {
 
         <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-0">
           {steps.map((step, index) => (
-            <div key={step.title} className="flex items-center">
-              <div className="flex flex-col items-center text-center p-4 max-w-[200px] group">
-                <div className="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center mb-3 shadow-md icon-pulse cursor-default">
-                  <step.icon className="w-7 h-7 text-primary-foreground" />
+            <div key={step.title} className="flex items-center group">
+              <div className="flex flex-col items-center text-center p-4 max-w-[200px]">
+                <div className="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center mb-3 shadow-md">
+                  <step.icon className="w-7 h-7 text-primary-foreground icon-slide-up" />
                 </div>
                 <div className="w-7 h-7 rounded-full bg-muted flex items-center justify-center mb-2 text-sm font-bold text-muted-foreground">
                   {index + 1}
