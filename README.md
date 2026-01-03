@@ -1,73 +1,86 @@
-# Welcome to your Lovable project
+# Inline | Think with AI, Don't Write with it.
 
-## Project info
+![Status](https://img.shields.io/badge/Status-Beta-blue)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Tech](https://img.shields.io/badge/Built%20With-React%20%7C%20Vite%20%7C%20Tailwind-indigo)
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+> **The Socratic AI tutor that helps students build critical thinking skills, rather than bypassing them.**
 
-## How can I edit this code?
+## 💡 The Problem
 
-There are several ways of editing your application.
+In the age of Generative AI, students face a dilemma:
 
-**Use Lovable**
+1.  **Struggle alone** at 2 AM with no feedback.
+2.  **Use ChatGPT** and risk academic dishonesty while stunting their own learning.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+Writing centers are great, but they aren't scalable or available 24/7. Students need a tool that acts as a **coach**, not a ghostwriter.
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🚀 The Solution: Inline
 
-**Use your preferred IDE**
+Inline is a writing assistant designed for **Academic Safety** and **Skill Growth**. unlike standard AI tools that auto-complete your sentences, Inline uses **Socratic Inquiry** to:
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+-   Identify weak logic and gaps in argumentation.
+-   Ask probing questions to spark deeper thinking.
+-   Provide structural feedback without generating the text for you.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## ✨ Key Features
 
-Follow these steps:
+-   **🛡️ 100% Plagiarism Free:** The AI never writes the essay for you. It only analyzes and questions.
+-   **🧠 Socratic Logic Engine:** Detects logical fallacies and weak claims, then prompts the user to strengthen them.
+-   **⚡ Instant Formatting:** seamless copy-paste handling for raw text or document uploads.
+-   **🔒 Private Environment:** A safe space to fail and iterate before submitting to a professor.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 🛠️ Tech Stack
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+-   **Frontend:** React (Vite) for high-performance rendering.
+-   **Styling:** Tailwind CSS for a modern, responsive "Swiss Design" aesthetic.
+-   **Icons:** Lucide React for consistent visual language.
+-   **Deployment:** Vercel (Demo) / Azure (Planned).
 
-# Step 3: Install the necessary dependencies.
-npm i
+## 📸 Screenshots
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+_(Add screenshots of your Landing Page and Dashboard here)_
 
-**Edit a file directly in GitHub**
+## 📦 Getting Started
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+To run this project locally:
 
-**Use GitHub Codespaces**
+1.  **Clone the repo**
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+    ```bash
+    git clone [https://github.com/yourusername/inline.git](https://github.com/yourusername/inline.git)
+    cd inline
+    ```
 
-## What technologies are used for this project?
+2.  **Install dependencies**
 
-This project is built with:
+    ```bash
+    npm install
+    ```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+3.  **Run the development server**
 
-## How can I deploy this project?
+    ```bash
+    npm run dev
+    ```
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+4.  Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
 
-## Can I connect a custom domain to my Lovable project?
+## 🗺️ Roadmap
 
-Yes, you can!
+-   [x] **Phase 1:** Core Landing Page & Value Proposition (Current Beta).
+-   [ ] **Phase 2:** Integration with LLM API (OpenAI/Anthropic) for real-time logic checking.
+-   [ ] **Phase 3:** "Institutional Mode" for professors to view analytics on student improvement.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 📄 License
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+### 📬 Contact
+
+**General Inquiries:** [hello@inlinetutor.com](mailto:hello@inlinetutor.com)  
+**Institutional Access:** [partnerships@inlinetutor.com](mailto:partnerships@inlinetutor.com)
+
+_Built with ❤️ by the Inline Team._
