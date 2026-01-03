@@ -36,14 +36,14 @@ const HowItWorks = () => {
 
         {/* Steps with connecting line */}
         <div className="relative steps-line">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-8 relative z-10">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-12 relative z-10">
             {steps.map((step, index) => (
               <div key={step.title} className="flex flex-col items-center text-center p-4 max-w-[200px]">
                 <div className={`w-14 h-14 rounded-2xl bg-primary flex items-center justify-center mb-3 shadow-lg relative z-10 ${step.pulseClass}`}>
                   <step.icon className="w-7 h-7 text-primary-foreground" />
                 </div>
-                <div className="w-7 h-7 rounded-full bg-card border-2 border-primary flex items-center justify-center mb-2 text-sm font-bold text-primary">
-                  {index + 1}
+                <div className="w-7 h-7 rounded-full bg-card border-2 border-primary flex items-center justify-center mb-2 text-sm font-bold text-primary leading-none">
+                  <span className="flex items-center justify-center w-full h-full">{index + 1}</span>
                 </div>
                 <h3 className="text-base font-semibold mb-1">{step.title}</h3>
                 <p className="text-sm text-muted-foreground">{step.description}</p>
