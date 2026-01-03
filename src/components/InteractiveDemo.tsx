@@ -34,43 +34,49 @@ const segments: FeedbackSegment[] = [
 ];
 
 const getHighlightStyles = (type: FeedbackSegment["type"], isActive: boolean) => {
-  const base = "cursor-pointer transition-all duration-200 rounded px-0.5 -mx-0.5";
+  const base = "cursor-pointer transition-all duration-200 rounded-sm px-0.5 -mx-0.5";
   
+  // Marker-style background with underline when active
   switch (type) {
     case "socratic":
-      return cn(base, "bg-feedback-blue-bg", isActive && "ring-1 ring-feedback-blue");
+      return cn(
+        base,
+        "bg-blue-200/40",
+        isActive && "bg-blue-300/60 decoration-2 underline decoration-blue-500"
+      );
     case "logic":
-      return cn(base, "bg-feedback-amber-bg", isActive && "ring-1 ring-feedback-amber");
+      return cn(
+        base,
+        "bg-amber-200/40",
+        isActive && "bg-amber-300/60 decoration-2 underline decoration-amber-500"
+      );
     case "praise":
-      return cn(base, "bg-feedback-teal-bg", isActive && "ring-1 ring-feedback-teal");
+      return cn(
+        base,
+        "bg-teal-200/40",
+        isActive && "bg-teal-300/60 decoration-2 underline decoration-teal-500"
+      );
   }
 };
 
 const getFeedbackCardStyles = (type: FeedbackSegment["type"], isActive: boolean) => {
-  const base = "p-4 rounded-xl bg-card cursor-pointer transition-all duration-200";
+  const base = "p-4 rounded-xl bg-card cursor-pointer transition-all duration-300";
   
   if (isActive) {
-    switch (type) {
-      case "socratic":
-        return cn(base, "ring-1 ring-feedback-blue card-shadow-hover");
-      case "logic":
-        return cn(base, "ring-1 ring-feedback-amber card-shadow-hover");
-      case "praise":
-        return cn(base, "ring-1 ring-feedback-teal card-shadow-hover");
-    }
+    return cn(base, "opacity-100 scale-105 shadow-xl z-10 relative");
   }
   
-  return cn(base, "card-shadow hover:card-shadow-hover");
+  return cn(base, "opacity-70 shadow-sm hover:opacity-90");
 };
 
 const getBadgeStyles = (type: FeedbackSegment["type"]) => {
   switch (type) {
     case "socratic":
-      return "bg-feedback-blue-bg text-feedback-blue";
+      return "bg-blue-100 text-blue-600";
     case "logic":
-      return "bg-feedback-amber-bg text-feedback-amber";
+      return "bg-amber-100 text-amber-600";
     case "praise":
-      return "bg-feedback-teal-bg text-feedback-teal";
+      return "bg-teal-100 text-teal-600";
   }
 };
 
@@ -192,8 +198,8 @@ const InteractiveDemo = () => {
           <div className="flex items-center gap-3 px-6 py-4 border-b border-border bg-muted/30">
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 rounded-full bg-destructive/60" />
-              <div className="w-3 h-3 rounded-full bg-feedback-amber/60" />
-              <div className="w-3 h-3 rounded-full bg-feedback-teal/60" />
+              <div className="w-3 h-3 rounded-full bg-amber-400/60" />
+              <div className="w-3 h-3 rounded-full bg-teal-400/60" />
             </div>
             <span className="text-sm text-muted-foreground">photography_analysis_essay.docx</span>
           </div>

@@ -1,7 +1,10 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
 
 const HeroSection = () => {
+  const [isHovered, setIsHovered] = useState(false);
+
   const scrollToDemo = () => {
     document.getElementById("demo")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -33,9 +36,19 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right: Visual */}
-          <div className="relative animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            <div className="relative bg-card rounded-2xl card-shadow p-6 border border-border hover-lift">
+          {/* Right: Visual with Parallax Effect */}
+          <div 
+            className="relative animate-fade-in" 
+            style={{ animationDelay: "0.2s" }}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            {/* Main Document Card - "Messy desk" rotation */}
+            <div 
+              className={`relative bg-card rounded-2xl card-shadow p-6 border border-border transition-all duration-700 ease-out ${
+                isHovered ? 'rotate-0' : '-rotate-1'
+              }`}
+            >
               {/* Document mockup */}
               <div className="space-y-4">
                 <div className="flex items-center gap-3 pb-4 border-b border-border">
@@ -54,8 +67,12 @@ const HeroSection = () => {
                 </div>
               </div>
 
-              {/* Floating feedback card */}
-              <div className="absolute -right-4 top-1/2 -translate-y-1/2 translate-x-1/2 bg-card rounded-xl card-shadow-hover p-4 border border-primary/20 max-w-[220px] animate-slide-in-right" style={{ animationDelay: "0.5s" }}>
+              {/* Floating feedback card - opposite rotation */}
+              <div 
+                className={`absolute -right-4 top-1/2 -translate-y-1/2 translate-x-1/2 bg-card rounded-xl card-shadow-hover p-4 border border-primary/20 max-w-[220px] transition-all duration-700 ease-out ${
+                  isHovered ? 'rotate-6' : 'rotate-2'
+                }`}
+              >
                 <div className="flex items-start gap-3">
                   <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center flex-shrink-0">
                     <MessageCircle className="w-4 h-4 text-primary-foreground" />

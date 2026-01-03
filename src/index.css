@@ -111,10 +111,50 @@
     box-shadow: var(--shadow-card-hover);
   }
 
-  /* Dot pattern background */
+  /* Dot pattern background - more visible */
   .dot-pattern {
-    background-image: radial-gradient(circle, hsl(var(--foreground) / 0.05) 1px, transparent 1px);
+    background-image: radial-gradient(circle, hsl(var(--foreground) / 0.12) 1px, transparent 1px);
     background-size: 24px 24px;
+  }
+
+  /* Connecting line for steps */
+  .steps-line {
+    position: relative;
+  }
+
+  .steps-line::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: linear-gradient(90deg, 
+      hsl(var(--border)) 0%, 
+      hsl(var(--primary) / 0.3) 50%, 
+      hsl(var(--border)) 100%
+    );
+    transform: translateY(-50%);
+    z-index: 0;
+  }
+
+  /* Pulse animation for steps */
+  @keyframes pulse-step {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+  }
+
+  .step-pulse-1 { animation: pulse-step 3s ease-in-out infinite; animation-delay: 0s; }
+  .step-pulse-2 { animation: pulse-step 3s ease-in-out infinite; animation-delay: 1s; }
+  .step-pulse-3 { animation: pulse-step 3s ease-in-out infinite; animation-delay: 2s; }
+
+  /* Watermark icon positioning */
+  .watermark-icon {
+    position: absolute;
+    bottom: -0.5rem;
+    right: -0.5rem;
+    opacity: 0.05;
+    pointer-events: none;
   }
 
   /* Micro-interaction utilities - no scale effects */
