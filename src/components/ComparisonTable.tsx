@@ -27,19 +27,19 @@ const ComparisonTable = () => {
       <div className="container mx-auto max-w-5xl">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-            The <span className="gradient-text">Integrity</span> Difference
+            The <span className="text-primary">Integrity</span> Difference
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             See how Inline compares to generative AI tools like ChatGPT.
           </p>
         </div>
 
-        <div className="bg-card rounded-2xl border border-border card-shadow overflow-hidden">
+        <div className="bg-card rounded-2xl border border-border card-shadow overflow-hidden hover-lift">
           {/* Header */}
           <div className="grid grid-cols-3 bg-muted/50 border-b border-border">
             <div className="p-6 font-medium text-muted-foreground" />
             <div className="p-6 text-center">
-              <span className="text-lg font-bold gradient-text">Inline</span>
+              <span className="text-lg font-bold text-primary">Inline</span>
             </div>
             <div className="p-6 text-center">
               <span className="text-lg font-semibold text-muted-foreground">Generative AI</span>
@@ -50,12 +50,12 @@ const ComparisonTable = () => {
           {comparisons.map((row, index) => (
             <div
               key={row.category}
-              className={`grid grid-cols-3 ${
+              className={`grid grid-cols-3 group transition-colors duration-200 hover:bg-muted/20 ${
                 index !== comparisons.length - 1 ? "border-b border-border" : ""
               }`}
             >
               <div className="p-6 flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center">
+                <div className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center transition-transform duration-200 group-hover:scale-105">
                   <row.icon className="w-5 h-5 text-muted-foreground" />
                 </div>
                 <span className="font-medium">{row.category}</span>
