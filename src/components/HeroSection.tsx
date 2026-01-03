@@ -7,12 +7,12 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="pt-32 pb-20 px-6">
+    <section className="pt-32 pb-20 px-6 dot-pattern">
       <div className="container mx-auto max-w-6xl">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left: Content */}
           <div className="space-y-8 animate-fade-in">
-            <h1 className="text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-balance">
+            <h1 className="text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-balance" style={{ color: '#1a1a1a' }}>
               Your Writing Tutor.{" "}
               <span className="text-primary">Available 24/7.</span>
             </h1>

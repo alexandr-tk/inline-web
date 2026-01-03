@@ -4,16 +4,16 @@ import { Button } from "@/components/ui/button";
 const plans = [
   {
     name: "Student Basic",
-    price: "Free",
-    description: "Forever free for students",
+    price: "Forever Free",
+    description: "No limits on learning.",
     icon: GraduationCap,
     highlighted: true,
     available: true,
     features: [
-      "5 essays per month",
-      "Basic Socratic feedback",
-      "Logic gap detection",
-      "Email support",
+      "Unlimited Essays (Fair use policy)",
+      "Socratic Logic Checking",
+      "Grammar & Style",
+      "24/7 Availability",
     ],
     cta: "Get Started",
   },
@@ -25,9 +25,9 @@ const plans = [
     highlighted: false,
     available: false,
     features: [
-      "Unlimited essays",
-      "Advanced feedback modes",
-      "Citation assistance",
+      "Access to latest Beta Models (GPT-5 class)",
+      "Deep Context Awareness",
+      "Citation Manager",
       "Priority support",
     ],
     cta: "Unavailable",
@@ -40,9 +40,9 @@ const plans = [
     highlighted: false,
     available: false,
     features: [
-      "Unlimited seats",
-      "Admin dashboard",
-      "LMS integration",
+      "Scholar Pro features FREE for all students",
+      "Canvas/Blackboard LMS Integration",
+      "Departmental Analytics",
       "Dedicated support",
     ],
     cta: "Contact Sales",
@@ -54,7 +54,7 @@ const PricingSection = () => {
     <section id="pricing" className="py-24 px-6">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+          <h2 className="text-3xl lg:text-4xl font-extrabold mb-4" style={{ color: '#1a1a1a' }}>
             Simple <span className="text-primary">Plans</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -66,12 +66,12 @@ const PricingSection = () => {
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`relative rounded-2xl border p-6 transition-all duration-300 ${
+              className={`relative rounded-2xl p-6 transition-all duration-300 ${
                 plan.highlighted
-                  ? "border-primary bg-card card-shadow-hover hover-lift"
+                  ? "bg-card card-shadow-hover ring-2 ring-primary"
                   : plan.available
-                  ? "border-border bg-card hover-lift"
-                  : "border-border bg-muted/30 opacity-70"
+                  ? "bg-card card-shadow hover-lift"
+                  : "bg-muted/30 opacity-60"
               }`}
             >
               {plan.highlighted && (
@@ -110,9 +110,9 @@ const PricingSection = () => {
 
               <ul className="space-y-3 mb-6">
                 {plan.features.map((feature) => (
-                  <li key={feature} className="flex items-center gap-2 text-sm">
+                  <li key={feature} className="flex items-start gap-2 text-sm">
                     <Check
-                      className={`w-4 h-4 ${
+                      className={`w-4 h-4 mt-0.5 flex-shrink-0 ${
                         plan.available ? "text-primary" : "text-muted-foreground"
                       }`}
                     />

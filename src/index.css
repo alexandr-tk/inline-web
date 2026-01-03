@@ -7,52 +7,52 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 216 28% 17%;
+    --foreground: 0 0% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 216 28% 17%;
+    --card-foreground: 0 0% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 216 28% 17%;
+    --popover-foreground: 0 0% 10%;
 
-    /* Primary: Academic Navy #2D3C59 */
-    --primary: 216 33% 26%;
-    --primary-hover: 216 33% 20%;
+    /* Primary: Academic Indigo #4E56C0 */
+    --primary: 236 45% 53%;
+    --primary-hover: 236 45% 45%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary: Muted Slate */
+    /* Secondary: Soft Slate */
     --secondary: 220 14% 96%;
-    --secondary-foreground: 216 28% 17%;
+    --secondary-foreground: 0 0% 10%;
 
     --muted: 220 14% 96%;
     --muted-foreground: 220 10% 46%;
 
-    /* Accent: Muted Gold */
-    --accent: 43 40% 55%;
-    --accent-light: 43 40% 96%;
-    --accent-foreground: 216 28% 17%;
+    /* Accent: Muted Warm Gold */
+    --accent: 40 50% 60%;
+    --accent-light: 40 50% 96%;
+    --accent-foreground: 0 0% 10%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 220 14% 90%;
     --input: 220 14% 90%;
-    --ring: 216 33% 26%;
+    --ring: 236 45% 53%;
 
     --radius: 0.75rem;
 
-    /* Custom shadows */
-    --shadow-soft: 0 4px 20px -4px hsl(216 28% 17% / 0.08);
-    --shadow-card: 0 1px 3px hsl(216 28% 17% / 0.04), 0 4px 12px hsl(216 28% 17% / 0.06);
-    --shadow-card-hover: 0 4px 16px hsl(216 28% 17% / 0.08), 0 8px 32px hsl(216 28% 17% / 0.08);
+    /* Custom shadows - soft diffused */
+    --shadow-soft: 0 4px 24px -4px hsl(0 0% 0% / 0.06);
+    --shadow-card: 0 2px 8px hsl(0 0% 0% / 0.04), 0 8px 24px hsl(0 0% 0% / 0.06);
+    --shadow-card-hover: 0 4px 12px hsl(0 0% 0% / 0.06), 0 16px 48px hsl(0 0% 0% / 0.1);
 
     /* Feedback colors */
     --feedback-blue: 220 70% 50%;
-    --feedback-blue-bg: 220 70% 97%;
+    --feedback-blue-bg: 220 70% 95%;
     --feedback-amber: 38 92% 50%;
-    --feedback-amber-bg: 38 100% 96%;
+    --feedback-amber-bg: 38 100% 94%;
     --feedback-teal: 168 76% 42%;
-    --feedback-teal-bg: 168 76% 96%;
+    --feedback-teal-bg: 168 76% 94%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -61,29 +61,29 @@
     --sidebar-accent: 240 4.8% 95.9%;
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 216 33% 26%;
+    --sidebar-ring: 236 45% 53%;
   }
 
   .dark {
-    --background: 216 28% 10%;
+    --background: 0 0% 8%;
     --foreground: 0 0% 98%;
-    --card: 216 28% 12%;
+    --card: 0 0% 10%;
     --card-foreground: 0 0% 98%;
-    --popover: 216 28% 12%;
+    --popover: 0 0% 10%;
     --popover-foreground: 0 0% 98%;
-    --primary: 216 33% 45%;
+    --primary: 236 45% 60%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 216 28% 18%;
+    --secondary: 0 0% 14%;
     --secondary-foreground: 0 0% 98%;
-    --muted: 216 28% 18%;
+    --muted: 0 0% 14%;
     --muted-foreground: 220 10% 60%;
-    --accent: 43 40% 55%;
+    --accent: 40 50% 60%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62% 30%;
     --destructive-foreground: 0 0% 98%;
-    --border: 216 28% 20%;
-    --input: 216 28% 20%;
-    --ring: 216 33% 45%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 236 45% 60%;
   }
 }
 
@@ -111,44 +111,39 @@
     box-shadow: var(--shadow-card-hover);
   }
 
-  /* Micro-interaction utilities */
+  /* Dot pattern background */
+  .dot-pattern {
+    background-image: radial-gradient(circle, hsl(var(--foreground) / 0.05) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  /* Micro-interaction utilities - no scale effects */
   .hover-lift {
-    @apply transition-all duration-300 ease-out;
+    @apply transition-shadow duration-300 ease-out;
   }
   
   .hover-lift:hover {
-    @apply -translate-y-1;
     box-shadow: var(--shadow-card-hover);
   }
 
-  .hover-scale {
-    @apply transition-transform duration-200 ease-out;
-  }
-
-  .hover-scale:hover {
-    @apply scale-105;
-  }
-
-  .hover-scale-sm {
-    @apply transition-transform duration-200 ease-out;
-  }
-
-  .hover-scale-sm:hover {
-    @apply scale-[1.02];
-  }
-
-  .icon-pulse {
+  /* Icon slide up effect */
+  .icon-slide-up {
     @apply transition-all duration-300 ease-out;
   }
 
-  .icon-pulse:hover {
-    @apply scale-110;
-    animation: subtle-pulse 1s ease-in-out infinite;
+  .group:hover .icon-slide-up {
+    @apply -translate-y-1;
+    color: hsl(var(--primary));
   }
 
-  @keyframes subtle-pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.8; }
+  /* Button hover - brighten and shadow */
+  .btn-hover {
+    @apply transition-all duration-200 ease-out;
+  }
+
+  .btn-hover:hover {
+    filter: brightness(1.05);
+    box-shadow: 0 4px 16px hsl(var(--primary) / 0.25);
   }
 }
 

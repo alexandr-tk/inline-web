@@ -1,17 +1,15 @@
 const TrustSection = () => {
   return (
-    <section className="py-16 px-6 border-y border-border/50 bg-secondary/30">
+    <section className="py-20 px-6">
       <div className="container mx-auto max-w-4xl text-center">
-        <p className="text-sm text-muted-foreground uppercase tracking-wider mb-6">
+        <p className="text-sm text-muted-foreground uppercase tracking-[0.2em] mb-8">
           Trusted by research partners at
         </p>
-        <div className="flex flex-col items-center gap-4">
-          <img 
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Lafayette_College_Leopard_logo.svg/1200px-Lafayette_College_Leopard_logo.svg.png"
-            alt="Lafayette College"
-            className="h-16 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity duration-200"
-          />
-          <p className="text-sm text-muted-foreground">
+        <div className="flex flex-col items-center gap-6">
+          <span className="text-xl font-semibold text-muted-foreground/80 uppercase tracking-[0.15em]">
+            Lafayette College
+          </span>
+          <p className="text-sm text-muted-foreground max-w-md">
             And pilot programs launching at major institutions in 2026.
           </p>
         </div>

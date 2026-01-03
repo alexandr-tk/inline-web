@@ -6,9 +6,9 @@ interface LogoProps {
 
 const Logo = ({ className }: LogoProps) => {
   return (
-    <a href="/" className={`flex items-center gap-1.5 group ${className}`}>
+    <a href="/" className={`flex items-center gap-0.5 group ${className}`}>
       {/* Icon: Square with text cursor */}
-      <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center transition-all duration-200 group-hover:scale-105">
+      <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center transition-all duration-200">
         <TextCursor className="w-5 h-5 text-primary-foreground" strokeWidth={2.5} />
       </div>
       {/* Text: "nline" */}

@@ -26,7 +26,7 @@ const ComparisonTable = () => {
     <section className="py-24 px-6 bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+          <h2 className="text-3xl lg:text-4xl font-extrabold mb-4" style={{ color: '#1a1a1a' }}>
             The <span className="text-primary">Integrity</span> Difference
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -34,7 +34,7 @@ const ComparisonTable = () => {
           </p>
         </div>
 
-        <div className="bg-card rounded-2xl border border-border card-shadow overflow-hidden hover-lift">
+        <div className="bg-card rounded-2xl border border-border card-shadow overflow-hidden">
           {/* Header */}
           <div className="grid grid-cols-3 bg-muted/50 border-b border-border">
             <div className="p-6 font-medium text-muted-foreground" />
@@ -55,7 +55,7 @@ const ComparisonTable = () => {
               }`}
             >
               <div className="p-6 flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center transition-transform duration-200 group-hover:scale-105">
+                <div className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center">
                   <row.icon className="w-5 h-5 text-muted-foreground" />
                 </div>
                 <span className="font-medium">{row.category}</span>
