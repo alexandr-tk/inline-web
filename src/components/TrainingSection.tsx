@@ -23,10 +23,10 @@ const TrainingSection = () => {
 						<div className='w-12 h-12 rounded-xl bg-indigo-50 flex items-center justify-center text-primary mb-6'>
 							<GraduationCap className='w-6 h-6' strokeWidth={2} />
 						</div>
-						<h3 className='text-xl font-bold text-slate-900 mb-2'>Elite Faculty Logic</h3>
+						<h3 className='text-xl font-bold text-slate-900 mb-2'>Expert-Level Logic</h3>
 						<p className='text-slate-500 leading-relaxed'>
-							Our critique patterns are sourced from 800+ rounds of feedback provided by professors at
-							top-tier research universities.
+							Our critique patterns are sourced from rigorous faculty feedback standards used at leading
+							research institutions, ensuring deep logical analysis.
 						</p>
 					</div>
 
@@ -35,10 +35,10 @@ const TrainingSection = () => {
 						<div className='w-12 h-12 rounded-xl bg-teal-50 flex items-center justify-center text-teal-600 mb-6'>
 							<Users className='w-6 h-6' strokeWidth={2} />
 						</div>
-						<h3 className='text-xl font-bold text-slate-900 mb-2'>Diverse Voices</h3>
+						<h3 className='text-xl font-bold text-slate-900 mb-2'>Representative Data</h3>
 						<p className='text-slate-500 leading-relaxed'>
-							We actively calibrate our models with essays from Community Colleges to ensure our feedback
-							is fair and never biased against non-standard dialects.
+							We calibrate our models on a diverse spectrum of student writing styles to ensure our
+							feedback evaluates the strength of your ideas, not just the polish of your prose.
 						</p>
 					</div>
 				</div>
