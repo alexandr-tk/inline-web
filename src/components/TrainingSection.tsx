@@ -38,7 +38,7 @@ const TrainingSection = () => {
 						<h3 className='text-xl font-bold text-slate-900 mb-2'>Representative Data</h3>
 						<p className='text-slate-500 leading-relaxed'>
 							We calibrate our models on a diverse spectrum of student writing styles to ensure our
-							feedback evaluates the strength of your ideas, not just the polish of your prose.
+							feedback evaluates the strength of your ideas, not only your grammar.
 						</p>
 					</div>
 				</div>

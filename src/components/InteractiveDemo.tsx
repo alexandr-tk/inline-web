@@ -15,21 +15,20 @@ const segments: FeedbackSegment[] = [
 		type: 'socratic',
 		text: 'A close reading of the photograph is therefore a way of decoding how all these meanings work together to carry the intent of the photographer and what the picture is trying to say to its viewer.',
 		feedback:
-			"Good start. However, you might want to consider how the 'connotative' invites interpretation, which is distinct from being purely 'subjective'. How does that distinction change your analysis?",
+			"Good start. However, you might want to consider how the 'connotative' invites interpretation, which is distinct from being purely 'subjective'.",
 	},
 	{
 		id: 'segment-2',
 		type: 'logic',
 		text: 'You cannot definitely tell that unless you have seen this picture before, so you can find such information only by searching it up.',
 		feedback:
-			'Yes—this is exactly how research provides insight. But you missed an opportunity to describe the visual hierarchy here: why is one figure positioned above the other? Does this posture suggest a celebration?',
+			'Yes, this is exactly how research provides insight. But you missed an opportunity to describe the visual hierarchy here: why is one figure positioned above the other? Does it suggest a celebration?',
 	},
 	{
 		id: 'segment-3',
 		type: 'praise',
 		text: 'This is the power of research.',
-		feedback:
-			'Excellent point! You have successfully tied the visual analysis back to the historical context to reveal a hidden truth.',
+		feedback: 'Excellent point! You have successfully tied the visual analysis back to the historical context.',
 	},
 ];
 
