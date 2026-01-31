@@ -1,86 +1,62 @@
-# Inline | Think with AI, Don't Write with it.
+<div align="center">
+<img src="public/favicon.svg" alt="Inline Logo" width="50" height="50" style="vertical-align: middle;" /> 
+  <span style="font-size: 40px; font-weight: bold; vertical-align: middle; color: #1a1a1a;">nline</span>
+  
+  <p><strong>The Socratic Logic Engine for Academic Writing</strong></p>
 
-![Status](https://img.shields.io/badge/Status-Beta-blue)
-![License](https://img.shields.io/badge/License-MIT-green)
-![Tech](https://img.shields.io/badge/Built%20With-React%20%7C%20Vite%20%7C%20Tailwind-indigo)
+  <p>
+    <a href="LICENSE">
+      <img src="https://img.shields.io/badge/License-MIT-green" alt="License" />
+    </a>
+    <img src="https://img.shields.io/badge/Status-Data_Collection-orange" alt="Current Status" />
+    <img src="https://img.shields.io/badge/Model-Qwen_3_Fine--Tuned-purple" alt="Model Target" />
+  </p>
+</div>
 
-> **The Socratic AI tutor that helps students build critical thinking skills, rather than bypassing them.**
+## 🚧 Current Status: R&D Phase
 
-## 💡 The Problem
+**Inline is currently in the Data Collection & Annotation phase.**
 
-In the age of Generative AI, students face a dilemma:
-
-1.  **Struggle alone** at 2 AM with no feedback.
-2.  **Use ChatGPT** and risk academic dishonesty while stunting their own learning.
-
-Writing centers are great, but they aren't scalable or available 24/7. Students need a tool that acts as a **coach**, not a ghostwriter.
-
-## 🚀 The Solution: Inline
-
-Inline is a writing assistant designed for **Academic Safety** and **Skill Growth**. unlike standard AI tools that auto-complete your sentences, Inline uses **Socratic Inquiry** to:
-
--   Identify weak logic and gaps in argumentation.
--   Ask probing questions to spark deeper thinking.
--   Provide structural feedback without generating the text for you.
-
-## ✨ Key Features
-
--   **🛡️ 100% Plagiarism Free:** The AI never writes the essay for you. It only analyzes and questions.
--   **🧠 Socratic Logic Engine:** Detects logical fallacies and weak claims, then prompts the user to strengthen them.
--   **⚡ Instant Formatting:** seamless copy-paste handling for raw text or document uploads.
--   **🔒 Private Environment:** A safe space to fail and iterate before submitting to a professor.
-
-## 🛠️ Tech Stack
-
--   **Frontend:** React (Vite) for high-performance rendering.
--   **Styling:** Tailwind CSS for a modern, responsive "Swiss Design" aesthetic.
--   **Icons:** Lucide React for consistent visual language.
--   **Deployment:** Vercel (Demo) / Azure (Planned).
-
-## 📸 Screenshots
-
-_(Add screenshots of your Landing Page and Dashboard here)_
-
-## 📦 Getting Started
-
-To run this project locally:
-
-1.  **Clone the repo**
-
-    ```bash
-    git clone [https://github.com/yourusername/inline.git](https://github.com/yourusername/inline.git)
-    cd inline
-    ```
-
-2.  **Install dependencies**
-
-    ```bash
-    npm install
-    ```
-
-3.  **Run the development server**
-
-    ```bash
-    npm run dev
-    ```
-
-4.  Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
-
-## 🗺️ Roadmap
-
--   [x] **Phase 1:** Core Landing Page & Value Proposition (Current Beta).
--   [ ] **Phase 2:** Integration with LLM API (OpenAI/Anthropic) for real-time logic checking.
--   [ ] **Phase 3:** "Institutional Mode" for professors to view analytics on student improvement.
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
+This repository hosts the **public web client** (`inline-web`), which currently serves as the project's landing portal and interactive concept demonstration. The Socratic reasoning backend is under active development and is not yet connected to this frontend.
 
 ---
 
-### 📬 Contact
+## 🏗️ Planned System Architecture
 
-**General Inquiries:** [hello@inlinetutor.com](mailto:hello@inlinetutor.com)  
-**Institutional Access:** [partnerships@inlinetutor.com](mailto:partnerships@inlinetutor.com)
+The platform is being architected as a **Human-in-the-Loop (HITL)** system. While the UI is public, the logic core operates on a private high-performance data pipeline to ensure academic integrity.
 
-_Built with ❤️ by the Inline Team._
+### 🧩 The Stack
+| Component | Tech | Responsibility |
+| :--- | :--- | :--- |
+| **Client (This Repo)** | React, Vite, Tailwind | **Public:** Landing page, waitlist management, and concept demo. |
+| **Data Engine** | HF Datasets, JSONL Shards | **[Internal]** Streaming pipeline for tokenization and artifact removal. |
+| **Model Target** | Qwen 3 (72B+) | **[Internal]** Fine-tuning target using parameter-efficient optimization (LoRA). |
+
+---
+
+## 🔬 Research & Data Engineering
+
+Our model is being trained on a proprietary dataset collected under **Lafayette College IRB** supervision. We are aggregating student essays into **JSONL shards** to train a model that optimizes for **Cognitive Load** rather than text generation.
+
+### Pedagogical Schema
+To prepare for the training run, we have defined a strict annotation schema (see [`specifications/dataset_schema.ts`](specifications/dataset_schema.ts)) that governs our internal grading tools:
+
+* **Feedback Categories:** Annotators classify inputs into `Thesis`, `Evidence`, `Analysis`, `Logic Flow`, or `Clarity`.
+* **Intervention Type:** Distinct labels for `Socratic Inquiry` (questions) vs `Constructive Critique` vs `Praise`.
+* **Chain of Thought (CoT):** Every annotation includes an `explanation` field to teach the model *why* a specific intervention was chosen.
+
+---
+
+## 🛠️ Local Development
+
+To run the web client locally:
+
+```bash
+git clone [https://github.com/alexandr-tk/inline-web.git](https://github.com/alexandr-tk/inline-web.git)
+npm install
+npm run dev
+
+```
+
+## 📄 License
+This frontend client is available under the [MIT License](LICENSE).
