@@ -1,7 +1,6 @@
 <div align="center">
-<img src="public/favicon.svg" alt="Inline Logo" width="50" height="50" style="vertical-align: middle;" /> 
-  <span style="font-size: 40px; font-weight: bold; vertical-align: middle; color: #1a1a1a;">nline</span>
-  
+
+<img src="public/inline-logo.svg" alt="Inline" width="220"/>
   <p><strong>The Socratic Logic Engine for Academic Writing</strong></p>
 
   <p>
@@ -52,11 +51,12 @@ To prepare for the training run, we have defined a strict annotation schema (see
 To run the web client locally:
 
 ```bash
-git clone [https://github.com/alexandr-tk/inline-web.git](https://github.com/alexandr-tk/inline-web.git)
+git clone https://github.com/alexandr-tk/inline-web.git
+cd inline-web
 npm install
 npm run dev
-
 ```
 
 ## 📄 License
 This frontend client is available under the [MIT License](LICENSE).
+
