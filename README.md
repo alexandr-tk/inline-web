@@ -1,62 +1,123 @@
+<a name="readme-top"></a>
+
 <div align="center">
+  <img src="public/inline-logo.svg" alt="Inline Logo" width="220" height="auto" />
 
-<img src="public/inline-logo.svg" alt="Inline" width="220"/>
-  <p><strong>The Socratic Logic Engine for Academic Writing</strong></p>
-
-  <p>
-    <a href="LICENSE">
-      <img src="https://img.shields.io/badge/License-MIT-green" alt="License" />
-    </a>
-    <img src="https://img.shields.io/badge/Status-Data_Collection-orange" alt="Current Status" />
-    <img src="https://img.shields.io/badge/Model-Qwen_3_Fine--Tuned-purple" alt="Model Target" />
+  <p align="center">
+    <strong>Think with AI. Don't write with it.</strong>
+    <br />
+    The Socratic Logic Engine for Academic Writing.
+    <br />
   </p>
 </div>
 
-## 🚧 Current Status: R&D Phase
+<div align="center">
+  <img src="https://img.shields.io/badge/Status-Data_Collection-orange?style=for-the-badge" alt="Status" />
+  <img src="https://img.shields.io/badge/License-Proprietary-red?style=for-the-badge" alt="License" />
+  <img src="https://img.shields.io/badge/Focus-Academic_Integrity-blue?style=for-the-badge" alt="Focus" />
+</div>
 
-**Inline is currently in the Data Collection & Annotation phase.**
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#about-the-project">About The Project</a></li>
+    <li><a href="#philosophy">Philosophy</a></li>
+    <li><a href="#methodology">Methodology</a></li>
+    <li><a href="#getting-started">Getting Started</a></li>
+    <li><a href="#copyright">Copyright & License</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
 
-This repository hosts the **public web client** (`inline-web`), which currently serves as the project's landing portal and interactive concept demonstration. The Socratic reasoning backend is under active development and is not yet connected to this frontend.
+## About The Project
 
----
+**Inline** is a writing tutor designed to solve the "2 AM Struggle" without compromising academic integrity. Unlike generative models that replace the student's voice, Inline acts as a rigorous logic checker that strengthens arguments through **Socratic inquiry**.
 
-## 🏗️ Planned System Architecture
+We solve two critical problems in the academic workflow:
+1.  **The Blank Page Fear:** Providing the initial nudge to get momentum going without auto-completing the work.
+2.  **Honest Feedback:** Offering rigorous, judgment-free critique on logic gaps and evidence strength before the assignment is submitted.
 
-The platform is being architected as a **Human-in-the-Loop (HITL)** system. While the UI is public, the logic core operates on a private high-performance data pipeline to ensure academic integrity.
+The project is developed in partnership with research faculty at **Lafayette College** and is currently in the **Data Collection & Annotation** phase.
 
-### 🧩 The Stack
-| Component | Tech | Responsibility |
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Philosophy
+
+**"Generative models replace your voice. Inline strengthens it."**
+
+We are building the anti-thesis to ChatGPT for education. Our system is architected to ensure 100% plagiarism-free output by refusing to generate text for the user.
+
+| Feature | Generative AI | Inline |
 | :--- | :--- | :--- |
-| **Client (This Repo)** | React, Vite, Tailwind | **Public:** Landing page, waitlist management, and concept demo. |
-| **Data Engine** | HF Datasets, JSONL Shards | **[Internal]** Streaming pipeline for tokenization and artifact removal. |
-| **Model Target** | Qwen 3 (72B+) | **[Internal]** Fine-tuning target using parameter-efficient optimization (LoRA). |
+| **Academic Safety** | High Risk (Flags as AI) | **100% Plagiarism Free** |
+| **Skill Growth** | Stunts growth (Bypasses learning) | **Builds Critical Thinking** |
+| **Feedback Style** | Auto-Completion | **Socratic Guidance** |
+| **Primary Output** | Text Generation | **Deep Questions** |
 
----
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 🔬 Research & Data Engineering
+## Methodology
 
-Our model is being trained on a proprietary dataset collected under **Lafayette College IRB** supervision. We are aggregating student essays into **JSONL shards** to train a model that optimizes for **Cognitive Load** rather than text generation.
+Generic AI is trained on the open internet, prioritizing statistical probability. Inline is trained on **graded coursework** and **faculty critiques**, prioritizing logical depth.
 
-### Pedagogical Schema
-To prepare for the training run, we have defined a strict annotation schema (see [`specifications/dataset_schema.ts`](specifications/dataset_schema.ts)) that governs our internal grading tools:
+### 1. Expert-Level Logic
+Our critique patterns are sourced from rigorous faculty feedback standards used at leading research institutions. We calibrate our models to evaluate the strength of ideas, not just grammar.
 
-* **Feedback Categories:** Annotators classify inputs into `Thesis`, `Evidence`, `Analysis`, `Logic Flow`, or `Clarity`.
-* **Intervention Type:** Distinct labels for `Socratic Inquiry` (questions) vs `Constructive Critique` vs `Praise`.
-* **Chain of Thought (CoT):** Every annotation includes an `explanation` field to teach the model *why* a specific intervention was chosen.
+### 2. The Socratic Loop
+Instead of fixing errors silently, the system employs a three-step cognitive loop:
+* **Upload:** The system ingests the draft.
+* **Inquiry:** The AI identifies weak arguments and asks deeply probing questions (e.g., *"What specific evidence supports this assertion?"*).
+* **Refine:** The student rewrites the argument. The AI checks the logic again.
 
----
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 🛠️ Local Development
+## Getting Started
 
-To run the web client locally:
+This repository hosts the public web client (`inline-web`), which handles the user interface and interactive concept demonstration.
 
+### Prerequisites
+* Node.js 18+
+* npm or yarn
+
+### Installation
+
+1. Clone the repository
 ```bash
 git clone https://github.com/alexandr-tk/inline-web.git
-cd inline-web
-npm install
-npm run dev
 ```
 
-## 📄 License
-This frontend client is available under the [MIT License](LICENSE).
+2. Install dependencies
+```bash
+cd inline-web
+npm install
 
+```
+
+
+3. Start the development server
+```bash
+npm run dev
+
+```
+
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Copyright & License
+
+**Copyright © 2026 Inline. All Rights Reserved.**
+
+This software is proprietary and confidential. Unauthorized copying, distribution, or modification of this source code, via any medium, is strictly prohibited.
+
+*Note: This repository is public for portfolio and demonstration purposes only.*
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Contact
+
+**Alex Tkachyov** - Founder - [LinkedIn](https://linkedin.com/in/alexandr-tkachyov)
+
+Project Link: [https://github.com/alexandr-tk/inline-web](https://www.google.com/search?q=https://github.com/alexandr-tk/inline-web)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
